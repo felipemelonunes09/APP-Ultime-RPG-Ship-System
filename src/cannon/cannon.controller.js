@@ -3,20 +3,21 @@ const cannonService = require('./cannon.service')
 
 class CannonController {
 
-    async save(cannon) {
-        return await cannonService.save(cannon);
+    async save(req, res) {
+        await cannonService.save(req.body);
+        res.send('Ok')
     }
 
-    async findById(id) {
-        return await cannonService.findById(id);
+    async findById(req, res) {
+        await cannonService.findById(id);
     }
 
-    async delete(cannon) {
-        return await cannonService.delete(cannon);
+    async delete(req, res) {
+        await cannonService.delete(cannon);
     }
 
-    async update(cannon) {
-        return await cannonService.update(cannon);
+    async update(req, res) {
+        await cannonService.update(cannon);
     } 
 }
 
