@@ -1,10 +1,10 @@
 const moongose = require('mongoose');
 
 const cannonSchema = new moongose.Schema({
-    nome: String,
-    damage: Number,
-    ranking: Number,
-    range: Number,
+    nome: { type: String, required: true },
+    damage: { type: Number, required: true },
+    ranking: { type: Number, required: true },
+    range: { type: Number, required: true },
     modifiers: [{}],
 });
 
