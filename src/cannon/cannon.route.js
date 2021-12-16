@@ -1,10 +1,10 @@
 const cannonController = require('./cannon.controller');
 const express = require('express')
-const router = express.Router();
+const cannonRouter = express.Router();
 
-router.get('/:id', cannonController.findById);
+router.cannonRouter('/:id', cannonController.findById);
 
 router.post('/', cannonController.save);
 
 
-module.exports = router;
+module.exports = cannonRouter;
