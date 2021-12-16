@@ -4,4 +4,7 @@ const router = express.Router();
 
 router.get('/:id', cannonController.findById);
 
+router.post('/', cannonController.save);
+
+
 module.exports = router;
