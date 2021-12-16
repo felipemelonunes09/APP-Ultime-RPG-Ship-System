@@ -1,4 +1,5 @@
 const express = require('express');
+const cannonRouter = require('./cannon/cannon.route');
 const app = express();
 
 app.get('/', (req, res) => {
@@ -8,4 +9,5 @@ app.get('/', (req, res) => {
     })
 })
 
+app.use('/cannon', cannonRouter)
 module.exports = app;
