@@ -9,6 +9,6 @@ cannonRouter.post('/', cannonController.save);
 
 cannonRouter.delete('/:id', cannonController.delete)
 
-cannonRouter.patch('/:id', cannonRouter.update)
+cannonRouter.patch('/:id', cannonController.update)
 
 module.exports = cannonRouter;
