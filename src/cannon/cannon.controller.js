@@ -22,7 +22,11 @@ class CannonController {
     }
 
     async delete(req, res) {
-        await cannonService.delete(cannon);
+
+        const id = req.params.id;
+        const result = await cannonService.delete(id);
+    
+        res.status(result.code).send(result)
     }
 
     async update(req, res) {
