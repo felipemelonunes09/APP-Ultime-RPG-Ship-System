@@ -40,16 +40,29 @@ class CannonService {
         }
     }
 
-    async update(cannon) {
-        return Cannon.updateOne(cannon, (err) => {
-            if(err) return err;
-        });
+    async delete(id) {
+        try {
+            const obj = (await this.findById(id)).object;
+            return { ...HTTP.ok(), result: await Cannon.deleteOne(obj) }
+        }
+        catch(e) {
+            console.log(e)
+            return HTTP.internalServer()
+        }
     }
 
-    async delete(cannon) {
-        return Cannon.deleteOne(cannon, (err) => {
+    async update(cannon) {
+
+        try {
+
+        }
+        catch (e) {
+            return HTPP.internalServer()
+        }
+
+        /*return Cannon.updateOne(cannon, (err) => {
             if(err) return err;
-          });
+        });*/
     }
 }
 
