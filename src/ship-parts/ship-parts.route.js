@@ -4,7 +4,10 @@ const shipPartsRouter = express.Router();
 
 shipPartsRouter.get('/:id', shipPartsController.findById);
 
-shipPartsRouter.post('/', shipPartsController.save);
+shipPartsRouter.get('/', cannonController.findAll)
 
+shipPartsRouter.post('/', cannonController.save);
+
+shipPartsRouter.delete('/:id', cannonController.delete)
 
 module.exports = shipPartsRouter;

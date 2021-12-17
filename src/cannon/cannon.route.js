@@ -3,12 +3,13 @@ const express = require('express')
 const cannonRouter = express.Router();
 
 cannonRouter.get('/:id', cannonController.findById);
+
 cannonRouter.get('/', cannonController.findAll)
 
 cannonRouter.post('/', cannonController.save);
 
 cannonRouter.delete('/:id', cannonController.delete)
 
-cannonRouter.patch('/:id', cannonRouter.update)
+// cannonRouter.patch('/:id', cannonRouter.update)
 
 module.exports = cannonRouter;
