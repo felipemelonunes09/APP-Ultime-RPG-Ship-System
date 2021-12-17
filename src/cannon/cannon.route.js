@@ -7,5 +7,8 @@ cannonRouter.get('/', cannonController.findAll)
 
 cannonRouter.post('/', cannonController.save);
 
+cannonRouter.delete('/:id', cannonController.delete)
+
+cannonRouter.patch('/:id', cannonRouter.update)
 
 module.exports = cannonRouter;
