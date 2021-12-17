@@ -51,18 +51,13 @@ class CannonService {
         }
     }
 
-    async update(cannon) {
-
+    async update(id, data) {
         try {
-
+            return { ...HTTP.ok(), result: await Cannon.findOneAndUpdate({ nome: id }, data ) }
         }
         catch (e) {
-            return HTPP.internalServer()
+            return HTPP.internalServer();
         }
-
-        /*return Cannon.updateOne(cannon, (err) => {
-            if(err) return err;
-        });*/
     }
 }
 
