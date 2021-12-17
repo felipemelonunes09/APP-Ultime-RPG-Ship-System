@@ -30,7 +30,12 @@ class CannonController {
     }
 
     async update(req, res) {
-        await cannonService.update(cannon);
+        
+        const id = req.params.id;
+        const data = req.body;
+
+        const result = await cannonService.update(id, data);
+        res.status(result.code).send(result);
     } 
 }
 
