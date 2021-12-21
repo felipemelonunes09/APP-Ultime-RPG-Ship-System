@@ -53,7 +53,7 @@ class CannonService {
 
     async update(id, data) {
         try {
-            return { ...HTTP.ok(), result: await Cannon.findOneAndUpdate({ nome: id }, data ) }
+            return { ...HTTP.ok(), result: await Cannon.findOneAndUpdate({ id: id }, data ) }
         }
         catch (e) {
             return HTPP.internalServer();

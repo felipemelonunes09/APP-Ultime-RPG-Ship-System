@@ -13,12 +13,12 @@ class CannonController {
         const id = req.params.id
         const result = await cannonService.findById(id);
         
-        res.status(result.code).send(result)
+        res.status(result.code).send(result);
     }
 
     async findAll(req, res) {
         const result = await cannonService.findAll();
-        res.status(result.code).send(result)
+        res.status(result.code).send(result);
     }
 
     async delete(req, res) {
@@ -26,7 +26,7 @@ class CannonController {
         const id = req.params.id;
         const result = await cannonService.delete(id);
     
-        res.status(result.code).send(result)
+        res.status(result.code).send(result);
     }
 
     async update(req, res) {

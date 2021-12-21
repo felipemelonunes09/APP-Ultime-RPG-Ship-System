@@ -6,7 +6,9 @@ const mongoose = require('mongoose');
 require('dotenv').config({ path: '../.env' });
 
 const PORT = process.env.PORT || 8081;
-const DATABASE_URL = `mongodb://localhost:${process.env.DB_PORT}/${process.env.DB_NAME}`;
+const DB_NAME = process.env.DB_NAME || 'redirectDb';
+const DB_PORT = process.env.DB_PORT || 27017;
+const DATABASE_URL = `mongodb://localhost:${DB_PORT}/${DB_NAME}`;
 
 app.listen(PORT, async () => {
 
