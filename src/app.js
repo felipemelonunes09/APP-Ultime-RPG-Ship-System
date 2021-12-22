@@ -2,6 +2,7 @@ const express = require('express');
 const cannonRouter = require('./cannon/cannon.route');
 const bodyParser = require('body-parser');
 const shipPartsRouter = require('./ship-parts/ship-parts.route');
+const shipRouter = require('./ship/ship.route');
 const app = express();
 
 // Config 
@@ -18,5 +19,6 @@ app.get('/', (req, res) => {
 
 app.use('/cannon', cannonRouter)
 app.use('/ship-part', shipPartsRouter)
+app.use('/ship', shipRouter)
 
 module.exports = app;
