@@ -1,8 +1,8 @@
 const moongose = require('mongoose');
 
 const shipPartsSchema = new moongose.Schema({
-    health: String,
-    ranking: Number,
+    health: { type: Number, required: true },
+    ranking: { type: Number, required: true },
     modifiers: [{}],
 });
 

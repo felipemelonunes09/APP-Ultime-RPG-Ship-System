@@ -56,7 +56,7 @@ class CannonService {
             return { ...HTTP.ok(), result: await Cannon.findOneAndUpdate({ id: id }, data ) }
         }
         catch (e) {
-            return HTPP.internalServer();
+            return HTTP.internalServer();
         }
     }
 }

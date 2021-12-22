@@ -1,12 +1,12 @@
 const express = require('express');
 const cannonRouter = require('./cannon/cannon.route');
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
+const shipPartsRouter = require('./ship-parts/ship-parts.route');
 const app = express();
 
 // Config 
     app.use( bodyParser.urlencoded({ extended: true }) )
     app.use( bodyParser.json() )
-
 
 app.get('/', (req, res) => {
     res.status(200).send({
@@ -17,4 +17,6 @@ app.get('/', (req, res) => {
 
 
 app.use('/cannon', cannonRouter)
+app.use('/ship-part', shipPartsRouter)
+
 module.exports = app;
