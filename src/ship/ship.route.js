@@ -3,7 +3,6 @@ const express = require('express');
 const shipRouter = express.Router();
 
 shipRouter.get('/:id', shipController.findById);
-
 shipRouter.get('/', shipController.findAll);
 
 shipRouter.post('/', shipController.save);

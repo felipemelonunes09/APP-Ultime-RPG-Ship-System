@@ -2,6 +2,9 @@ const shipService = require('./ship.service');
 
 class ShipController {
     async save(req, res) {
+
+        console.log('test')
+
         const result = await shipService.save(req.body);
         res.status(result.code).send(result)
     }

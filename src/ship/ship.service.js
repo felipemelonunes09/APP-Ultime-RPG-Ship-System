@@ -1,9 +1,6 @@
 const HTTP = require('../utils/statusHTTP');
 const Ship = require('./models/ship.model');
 
-HTTP = require('../utils/statusHTTP');
-Ship = require('./models/ship.model');
-
 class ShipService {
 
     async findById(id) {
@@ -43,8 +40,7 @@ class ShipService {
 
     async delete(id) {
         try {
-            const obj = (await this.findById(id)).object;
-            return { ...HTTP.ok(), result: await Ship.deleteOne(obj) }
+            return { ...HTTP.ok(), result: await Ship.findOneAndDelete({ id }) }
         }
         catch(e) {
             console.log(e);

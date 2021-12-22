@@ -13,14 +13,13 @@ const shipSchema = new moongose.Schema({
         ranking: Number,
         shipType: String,
         name: String,
-        captain: { id: String },
+        captain: String,
         cannonQuantity: { min: Number, max: Number },
         crewMaxQuantity: Number,
-        crew: [ { id: String } ],
-
+        crew: [{}],
         _InventoryModule: {
             maxWeight: Number,
-            items: [{ id: Number, quantity: Number }]
+            items: []
         }
     },
 
