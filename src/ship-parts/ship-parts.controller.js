@@ -29,7 +29,13 @@ class ShipPartsController {
     }
 
     async update(req, res) {
-        await shipPartsService.update(shipParts);
+
+        const id = req.params.id;
+        const data = req.body;
+
+        const result = await shipPartsService.update(id, data);
+        res.status(result.code).send(result)
+
     } 
 }
 
