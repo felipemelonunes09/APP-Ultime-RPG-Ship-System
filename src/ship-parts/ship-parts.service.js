@@ -14,7 +14,7 @@ class ShipPartsService {
 
     async findAll() {
         try {
-            return { ...HTTP.ok(), objects: await ShipParts.findAll() }
+            return { ...HTTP.ok(), objects: await ShipParts.find() }
         }
         catch(e) {
             console.log(e);
@@ -39,10 +39,13 @@ class ShipPartsService {
         }
     }
 
-    async update(shipPart) {
-        return ShipParts.updateOne(cannon, (err) => {
-            if(err) return err;
-        });
+    async update(id, data) {
+        try {
+            return { ...HTTP.ok(), result: await ShipParts.findOneAndUpdate({ _id: id }, data) }
+        }
+        catch(e) {
+            return HTTP.internalServer()
+        }
     }
 
     async delete(id) {
