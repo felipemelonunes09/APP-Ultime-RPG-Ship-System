@@ -1,13 +1,14 @@
 const shipPartsController = require('./ship-parts.controller');
-const express = require('express')
+const express = require('express');
 const shipPartsRouter = express.Router();
 
 shipPartsRouter.get('/:id', shipPartsController.findById);
+shipPartsRouter.get('/', shipPartsController.findAll)
 
-shipPartsRouter.get('/', cannonController.findAll)
+shipPartsRouter.post('/', shipPartsController.save);
 
-shipPartsRouter.post('/', cannonController.save);
+shipPartsRouter.delete('/:id', shipPartsController.delete)
 
-shipPartsRouter.delete('/:id', cannonController.delete)
+shipPartsRouter.patch('/:id', shipPartsController.update)
 
 module.exports = shipPartsRouter;
