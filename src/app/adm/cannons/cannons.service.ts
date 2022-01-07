@@ -1,28 +1,15 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { environment } from "src/environments/environment";
-import { HttpClient } from "@angular/common/http";
-
+import { ServiceModel } from 'src/utils/service-model';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CannonService {
-
-  constructor(private http: HttpClient) { }
-
-  getAll() {
-    return this.http.get(`${environment.url}/cannon`);
+export class CannonService extends ServiceModel {
+  
+  constructor(private cannonHttp: HttpClient) {
+    super(cannonHttp);
+    this.routeName = "cannon";
   }
 
-  add(data: any) {
-    return this.http.post(`${environment.url}/cannon`, data);
-  }
-
-  update(data: any) {
-    return this.http.patch(`${environment.url}/cannon/${data.id}`, data);
-  }
-
-  delete(id: any) {
-    return this.http.delete(`${environment.url}/cannon/${id}`);
-  }
 }
