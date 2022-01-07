@@ -8,21 +8,21 @@ export class ServiceModel {
 
     getAll() {
         return this.http.get(`${environment.url}/${this.routeName}`);
-      }
+    }
     
-      getById(id: number) {
+    getById(id: number) {
         return this.http.get(`${environment.url}/${this.routeName}/${id}`);
-      }
+    }
     
-      create(data: any) {
+    create(data: any) {
         return this.http.post(`${environment.url}/${this.routeName}`, data);
-      }
+    }
     
-      update(data: any) {
-        return this.http.patch(`${environment.url}/${this.routeName}/${data.id}`, data);
-      }
+    update(data: any) {
+      return this.http.patch(`${environment.url}/${this.routeName}/${data.id}`, data);
+    }
     
-      delete(id: number) {
-        return this.http.delete(`${environment.url}/${this.routeName}/${id}`);
-      }
+    delete(id: number) {
+      return this.http.delete(`${environment.url}/${this.routeName}/${id}`);
+    }
 }
