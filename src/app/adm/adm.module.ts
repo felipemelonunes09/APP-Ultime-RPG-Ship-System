@@ -1,4 +1,5 @@
 import { CommonModule } from "@angular/common";
+import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 import { AdmComponent } from "./adm.component";
 import { AdmRoutingModule } from "./adm.routing.module";
@@ -9,7 +10,8 @@ import { ShipsComponent } from "./ships/ships.component";
 @NgModule({
     imports: [
         CommonModule,
-        AdmRoutingModule
+        AdmRoutingModule,
+        HttpClientModule
     ],
     exports: [],
     declarations: [
