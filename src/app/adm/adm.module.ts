@@ -1,6 +1,7 @@
 import { CommonModule } from "@angular/common";
 import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
+import { EmptyListBlankslateComponent } from "../static/empty-list-blankslate/empty-list-blankslate.component";
 import { AdmComponent } from "./adm.component";
 import { AdmRoutingModule } from "./adm.routing.module";
 import { CannonsComponent } from "./cannons/cannons.component";
@@ -19,7 +20,8 @@ import { ShipsComponent } from "./ships/ships.component";
         AdmComponent,
         CannonsComponent,
         PartsComponent,
-        ShipsComponent
+        ShipsComponent,
+        EmptyListBlankslateComponent
     ],
     providers: []
 
