@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CannonService } from './cannons.service';
 
 @Component({
   selector: 'app-cannons',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CannonsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private cannonService: CannonService) { }
 
   ngOnInit(): void {
   }
