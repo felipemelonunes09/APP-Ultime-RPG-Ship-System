@@ -1,3 +1,16 @@
-<div>
+<div *ngIf="cannons.length == 0">
     <app-empty-list-blankslate title="Sem canhões criados" description="Crie novos canhões e adicione aos seus návios para utiliza-los em batalha" button="Criar novo canhão" link="Voltar"></app-empty-list-blankslate>
+</div>
+
+<div *ngIf="cannons.length > 0" class="Box">
+    <div *ngFor="let cannon of cannons" class="Box-row d-flex flex-items-center">
+        <div class="flex-auto">
+            <strong>{{cannon.nome}}</strong>
+            <div class="text-small color-fg-subtle">
+                Rank: {{cannon.ranking}} | Damage: {{cannon.damage}}
+            </div>
+        </div>
+        <button type="button" class="btn btn-primary mr-2" name="button">+</button>
+        <button type="button" class="btn btn-danger" name="button">x</button>
+    </div>
 </div>
