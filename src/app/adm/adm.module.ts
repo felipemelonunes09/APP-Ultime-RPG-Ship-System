@@ -14,6 +14,7 @@ import { ShipsComponent } from "./ships/ships.component";
         BrowserModule,
         CommonModule,
         AdmRoutingModule,
+        BrowserModule,
         HttpClientModule
     ],
     exports: [],

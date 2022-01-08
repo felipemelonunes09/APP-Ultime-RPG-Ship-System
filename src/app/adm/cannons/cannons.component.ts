@@ -7,17 +7,16 @@ import { CannonService } from './cannons.service';
   styleUrls: ['./cannons.component.css']
 })
 export class CannonsComponent implements OnInit {
-
+  cannons: any = [];
   constructor(private cannonService: CannonService) { }
 
   ngOnInit(): void {
     this.getAll();
-    this.create({damage: 5, ranking: 1, range: 2, modifiers: []});
   }
 
   getAll() {
-    this.cannonService.getAll().subscribe((arg: any) => {
-      console.log(arg);
+    this.cannonService.getAll().subscribe((cannons: any) => {
+      this.cannons = cannons.objects;
      });
   }
 
