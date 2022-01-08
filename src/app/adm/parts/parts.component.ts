@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PartsComponent implements OnInit {
 
+  public parts: any = []
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  isPartsEmpty() : Boolean {
+    return this.parts.length == 0
   }
 
 }
