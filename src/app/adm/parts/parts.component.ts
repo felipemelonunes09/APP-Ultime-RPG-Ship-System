@@ -18,4 +18,8 @@ export class PartsComponent implements OnInit {
     return this.parts.length == 0
   }
 
+  create(value: any): void {
+      console.log(value)
+  }
+
 }

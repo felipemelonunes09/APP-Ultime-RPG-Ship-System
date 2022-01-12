@@ -5,7 +5,7 @@
         <p>
             {{ description }}
         </p>
-        <button class="btn btn-primary my-3"> {{ button }} </button>
-        <p> <button class="btn-link" type="button"> {{ link }} </button> </p>
+        <button class="btn btn-primary my-3" (click)="buttonEvent()"> {{ button }} </button>
+        <p> <button class="btn-link" type="button" (click)="linkEvent"> {{ link }} </button> </p>
     </div>
 </div>
