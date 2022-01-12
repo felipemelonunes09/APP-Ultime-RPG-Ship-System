@@ -1,6 +1,15 @@
 <div class="border rounded-3">
     <div *ngIf="isPartsEmpty()">
-        <app-empty-list-blankslate title="Sem partes de navios criadas" description="Crie partes de navios como mastro, casco, convés e velas para reutilizar na criações individuais de cada navio." button="criar nova parte" link="voltar"></app-empty-list-blankslate>
+
+        <app-empty-list-blankslate 
+            title="Sem partes de navios criadas" 
+            description="Crie partes de navios como mastro, casco, convés e velas para reutilizar na criações individuais de cada navio." 
+            button="Criar nova parte" 
+            link="Voltar"
+            (buttonClicked)="create($event)"
+            >
+        </app-empty-list-blankslate>
+
     </div>
     <div *ngIf="!isPartsEmpty()">
         <div class="m-5">
@@ -16,7 +25,7 @@
                     <div class="flex-auto">
                         <strong> Row title </strong>
                         <div class="text-small color-fg-subtle">
-                            Descriptiom
+                            Description
                         </div>
                     </div>
                 </div>
