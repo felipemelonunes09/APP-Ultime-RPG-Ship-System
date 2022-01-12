@@ -14,7 +14,6 @@ export class EmptyListBlankslateComponent implements OnInit {
   @Input() link: string | undefined;
   @Input() button: string | undefined;
 
-
   ngOnInit(): void {
   }
 

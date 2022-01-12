@@ -7,21 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PartsComponent implements OnInit {
 
-  public parts: any = [
-    {
-      health: 100,
-      ranking: 1,
-      name: 'Mastro de fragrata 1',
-      tipo: 'Mastro'
-
-    }, 
-    {
-
-    }, 
-    {
-
-    }
-  ]
+  public parts: any = []
 
   constructor() { }
 
