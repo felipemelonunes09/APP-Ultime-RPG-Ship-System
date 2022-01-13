@@ -1,1 +1,3 @@
-/* You can add global styles to this file, and also import other style files */
+.filter-blue{
+    filter: invert(62%) sepia(51%) saturate(3012%) hue-rotate(189deg) brightness(102%) contrast(103%);
+}
