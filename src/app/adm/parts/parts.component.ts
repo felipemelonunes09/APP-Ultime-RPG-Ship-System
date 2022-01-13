@@ -14,12 +14,4 @@ export class PartsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  isPartsEmpty() : Boolean {
-    return this.parts.length == 0
-  }
-
-  create(value: any): void {
-      console.log(value)
-  }
-
 }
