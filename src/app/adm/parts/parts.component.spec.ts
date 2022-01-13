@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { EmptyListBlankslateComponent } from 'src/app/static/empty-list-blankslate/empty-list-blankslate.component';
 
 import { PartsComponent } from './parts.component';
 
@@ -8,7 +9,7 @@ describe('PartsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PartsComponent ]
+      declarations: [ PartsComponent, EmptyListBlankslateComponent  ]
     })
     .compileComponents();
   });
