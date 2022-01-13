@@ -14,6 +14,10 @@ export class CannonsComponent implements OnInit {
     this.getAll();
   }
 
+  isPartsEmpty() : Boolean {
+    return this.cannons.length == 0
+  }
+
   getAll() {
     this.cannonService.getAll().subscribe((cannons: any) => {
       this.cannons = cannons.objects;
@@ -21,26 +25,26 @@ export class CannonsComponent implements OnInit {
   }
 
   getById(id: number) {
-    this.cannonService.getById(id).subscribe((arg: any) => {
-      console.log(arg);
+    this.cannonService.getById(id).subscribe((cannons: any) => {
+      console.log(cannons);
      });
   }
 
   create(data: any) {
-    this.cannonService.create(data).subscribe((arg: any) => {
-      console.log(arg);
+    this.cannonService.create(data).subscribe((cannons: any) => {
+      console.log(cannons);
      });
   }
 
   update(data: any) {
-    this.cannonService.update(data).subscribe((arg: any) => {
-      console.log(arg);
+    this.cannonService.update(data).subscribe((cannons: any) => {
+      console.log(cannons);
      });
   }
 
   delete(id: number) {
-    this.cannonService.delete(id).subscribe((arg: any) => {
-      console.log(arg);
+    this.cannonService.delete(id).subscribe((cannons: any) => {
+      console.log(cannons);
      });
   }
 }
