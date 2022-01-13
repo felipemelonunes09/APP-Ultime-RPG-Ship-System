@@ -6,7 +6,7 @@ import { EmptyListBlankslateComponent } from "../static/empty-list-blankslate/em
 import { AdmComponent } from "./adm.component";
 import { AdmRoutingModule } from "./adm.routing.module";
 import { CannonsComponent } from "./cannons/cannons.component";
-import { PartsComponent } from "./parts/parts.component";
+import { PartsModule } from "./parts/parts.module";
 import { ShipsComponent } from "./ships/ships.component";
 
 @NgModule({
@@ -14,17 +14,15 @@ import { ShipsComponent } from "./ships/ships.component";
         BrowserModule,
         CommonModule,
         AdmRoutingModule,
-        BrowserModule,
-        HttpClientModule
+        HttpClientModule,
+        PartsModule
     ],
     exports: [],
     declarations: [
         // components here
-        AdmComponent,
+        AdmComponent, 
         CannonsComponent,
-        PartsComponent,
-        ShipsComponent,
-        EmptyListBlankslateComponent
+        ShipsComponent
     ],
     providers: []
 
