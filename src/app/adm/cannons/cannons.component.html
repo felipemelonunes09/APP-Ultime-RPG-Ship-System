@@ -1,10 +1,4 @@
 <div class="border rounded-3">
-    <div *ngIf="isPartsEmpty()">
-        <app-empty-list-blankslate title="Sem canhões criados" description="Crie novos canhões e adicione aos seus návios para utiliza-los em batalha" button="Criar novo canhão" link="Voltar"></app-empty-list-blankslate>
-    </div>
-<div *ngIf="cannons.length == 0">
-    <!--<app-empty-list-blankslate title="Sem canhões criados" description="Crie novos canhões e adicione aos seus návios para utiliza-los em batalha" button="Criar novo canhão" link="Voltar"></app-empty-list-blankslate>-->
-</div>
     <div *ngIf="!isPartsEmpty()" >
         <div class="m-5">
             <div class="Subhead">

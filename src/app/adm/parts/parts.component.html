@@ -1,5 +1,15 @@
 <div class="border rounded-3">
-    <div *ngIf="isPartsEmpty()">
+
+    <nav class="UnderlineNav UnderlineNav--full">
+        <div class="container-lg UnderlineNav-container">
+            <div class="UnderlineNav-body m-2">
+                <a class="UnderlineNav-item" href="/adm/parts/list"> <i class="fas fa-list"></i> Lista </a>
+                <a class="UnderlineNav-item" href="/adm/parts/create"> <i class="fas fa-plus"></i> Criar </a>
+            </div>  
+        </div>
+    </nav>
+
+    <div *ngIf="!isPartsEmpty()">
         <app-empty-list-blankslate title="Sem partes de navios criadas" description="Crie partes de navios como mastro, casco, convés e velas para reutilizar na criações individuais de cada navio." button="Criar nova parte" link="voltar"></app-empty-list-blankslate>
     </div>
     <div *ngIf="!isPartsEmpty()">
@@ -25,14 +35,8 @@
             </div>
         </div>
     </div>
-</div>
-    <nav class="UnderlineNav UnderlineNav--full" aria-label="Foo bar">
-        <div class="container-lg UnderlineNav-container">
-            <div class="UnderlineNav-body m-2">
-                <a class="UnderlineNav-item" href="/adm/parts/list"> <i class="fas fa-list"></i> Lista </a>
-                <a class="UnderlineNav-item" href="/adm/parts/create"> <i class="fas fa-plus"></i> Criar </a>
-            </div>  
-        </div>
-    </nav>
-    <router-outlet></router-outlet>    
+
+    <div>
+        <router-outlet></router-outlet>    
+    </div>
 </div>

@@ -3,9 +3,11 @@ import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { EmptyListBlankslateComponent } from "../static/empty-list-blankslate/empty-list-blankslate.component";
+import { EmptyListBlankslateModule } from "../static/empty-list-blankslate/empty-list-blankslate.module";
 import { AdmComponent } from "./adm.component";
 import { AdmRoutingModule } from "./adm.routing.module";
 import { CannonsComponent } from "./cannons/cannons.component";
+import { CannonsModule } from "./cannons/cannons.module";
 import { PartsModule } from "./parts/parts.module";
 import { ShipsComponent } from "./ships/ships.component";
 
@@ -15,13 +17,13 @@ import { ShipsComponent } from "./ships/ships.component";
         CommonModule,
         AdmRoutingModule,
         HttpClientModule,
-        PartsModule
+        PartsModule,
+        CannonsModule
     ],
     exports: [],
     declarations: [
         // components here
         AdmComponent, 
-        CannonsComponent,
         ShipsComponent
     ],
     providers: []

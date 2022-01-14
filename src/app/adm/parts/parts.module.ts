@@ -7,16 +7,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { PartsComponent } from './parts.component';
 import { PartsRoutingModule } from './parts.routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { EmptyListBlankslateModule } from 'src/app/static/empty-list-blankslate/empty-list-blankslate.module';
 
 
 @NgModule({
   declarations: [
     PartsComponent,
     ListPartsComponent,
-    FormPartsComponent,
-    EmptyListBlankslateComponent
+    FormPartsComponent
   ],
   imports: [
+    EmptyListBlankslateModule,
     PartsRoutingModule,
     ReactiveFormsModule,
     CommonModule,
