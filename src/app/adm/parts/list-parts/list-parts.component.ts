@@ -8,7 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ListPartsComponent implements OnInit {
   
-  parts: any = [];
+  parts: any = [1];
 
   constructor(private router: Router, private route: ActivatedRoute) { }
 
