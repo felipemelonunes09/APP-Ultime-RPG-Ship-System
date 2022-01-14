@@ -2,21 +2,12 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { ServiceModel } from "src/utils/service-model";
 
-
 @Injectable({ 
     providedIn: 'root'
 })
-export class PartsService extends ServiceModel {
-    
-    private _ranking = ['SS', 'S', 'A', 'B', 'C', 'D', 'E'] 
-
+export class ShipService extends ServiceModel {
     constructor(private partHttp: HttpClient) {
         super(partHttp);
-        this.routeName = 'ship-part';
+        this.routeName = 'ship';
     }
-
-    get ranking(){
-        return this._ranking
-    }
-    
 }
