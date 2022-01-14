@@ -1,1 +1,38 @@
-<p>form-parts works!</p>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="container-lg clearfix m-5">
+        <div class="Subhead">
+            <div class="Subhead-heading">
+                <i class="far fa-edit"></i> Criando a parte
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 col-sm-12 float-left p-2 mb-3">
+                <label for="name"> <i class="fas fa-signature"></i> Nome </label>
+                <input class="form-control input-lg input-block mt-2 ml-2" formControlName="name" type="text" placeholder="Digite o nome da parte do navio">
+            </div>
+            <div class="col-lg-4 col-sm-12 float-left p-2">
+                <label for="health"> <i class="far fa-heart"></i> Vida </label>
+                <input class="form-control input-lg input-block mt-2 ml-2" formControlName="health" type="number" placeholder="Digite a vida da parte">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 float-left p-2 mb-3">
+                <label for="ranking"> <i class="fas fa-trophy"></i> Ranking </label>
+                <select class="input-block mt-2 ml-2 form-select" formControlName="ranking">
+                    <option *ngFor="let rank of getRank()"> {{ rank }} </option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 float-left p-2 mb-2">
+                <label for="description"> <i class="fas fa-align-right"></i> Description </label>
+                <textarea class="form-control input-block ml-2 mt-2" formControlName="description" placeholder="Digite a descrição do componente que deseja criar"></textarea>
+            </div>
+        </div>
+        <div class="row"> 
+            <div class="mb-2 float-right">
+                <button class="btn btn-primary" type="submit"> Criar </button>
+            </div>
+        </div>
+    </div>
+</form>

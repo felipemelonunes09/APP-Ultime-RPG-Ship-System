@@ -7,8 +7,16 @@ import { ServiceModel } from "src/utils/service-model";
     providedIn: 'root'
 })
 export class PartsService extends ServiceModel {
+    
+    private _ranking = ['SS', 'S', 'A', 'B', 'C', 'D', 'E'] 
+
     constructor(private partHttp: HttpClient) {
         super(partHttp);
         this.routeName = 'ship-part';
     }
+
+    get ranking(){
+        return this._ranking
+    }
+    
 }
