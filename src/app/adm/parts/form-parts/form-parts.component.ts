@@ -26,7 +26,6 @@ export class FormPartsComponent implements OnInit {
   }
 
   public onSubmit() {
-    console.log(this.form)
     this.form.reset()
   }
 
