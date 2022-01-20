@@ -10,6 +10,7 @@ import { AppFieldControlMsgModule } from 'src/app/static/app-field-control-msg/a
 import { FormPartsModule } from './form-parts/form-parts.module';
 import { CreatePartsComponent } from './create-parts/create-parts.component';
 import { UpdatePartsComponent } from './update-parts/update-parts.component';
+import { PartsService } from './parts.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,9 @@ import { UpdatePartsComponent } from './update-parts/update-parts.component';
     PartsComponent,
     ListPartsComponent
   ],
+  providers: [PartsService],
   imports: [
+
     AppFieldControlMsgModule,
     EmptyListBlankslateModule,
 
