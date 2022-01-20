@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { PartsService } from '../parts.service';
 
@@ -10,6 +10,8 @@ import { PartsService } from '../parts.service';
 export class FormPartsComponent implements OnInit {
 
   form!: FormGroup; 
+
+  @Output() submitted = new EventEmitter()
 
   constructor(
     private formBuilder: FormBuilder,
@@ -26,6 +28,7 @@ export class FormPartsComponent implements OnInit {
   }
 
   public onSubmit() {
+    this.submitted.emit(JSON.stringify(this.form.value))
     this.form.reset()
   }
 

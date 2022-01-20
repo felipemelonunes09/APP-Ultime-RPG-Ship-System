@@ -12,4 +12,8 @@ export class CreatePartsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  create(event: any) : any {
+    console.log(event)
+  }
+
 }
