@@ -6,10 +6,8 @@ import { ServiceModel } from 'src/utils/service-model';
   providedIn: 'root'
 })
 export class CannonService extends ServiceModel {
-  
   constructor(private cannonHttp: HttpClient) {
     super(cannonHttp);
     this.routeName = "cannon";
   }
-
 }
