@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ShipsComponent } from './ships.component';
-
+import { CannonsComponent } from './cannons.component';
 const routes: Routes = [
     { 
-        path: 'ships', component: ShipsComponent,
+        path: 'cannons', component: CannonsComponent,
     },
 ];
 
@@ -13,4 +12,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 
-export class ShipsRoutingModule { }
+export class CannonsRoutingModule { }

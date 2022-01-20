@@ -1,9 +1,23 @@
 <div class="border rounded-3">
+    
+    <nav class="UnderlineNav UnderlineNav--full color-shadow-medium">
+        <div class="container-lg UnderlineNav-container">
+            <div class="UnderlineNav-body m-2">
+                <a class="UnderlineNav-item" routerLink="/adm/cannons/list"> <i class="fas fa-list"></i> Lista </a>
+                <a class="UnderlineNav-item" routerLink="/adm/cannons/create"> <i class="fas fa-plus"></i> Criar </a>
+            </div>  
+        </div>
+    </nav>
+    
+    <div *ngIf="!isPartsEmpty()">
+        <app-empty-list-blankslate title="Sem partes de navios criadas" description="Crie partes de navios como mastro, casco, convés e velas para reutilizar na criações individuais de cada navio." button="Criar nova parte" link="voltar"></app-empty-list-blankslate>
+    </div>
+
     <div *ngIf="!isPartsEmpty()" >
         <div class="m-5">
             <div class="Subhead">
                 <div class="Subhead-heading" style="color: #58a6ff;"><i class="fas fa-meteor mr-2"></i> Canhões </div>
-                <div class="Subhead-actions"><a href="#url" class="btn btn-sm btn-primary" role="button"> Criar </a></div>
+                <div class="Subhead-actions"><a routerLink="#url" class="btn btn-sm btn-primary" role="button"> Criar </a></div>
             </div>
             <div class="mt-5 mb-2">
                 <input class="form-control input-block" type="text" placeholder="Pesquisar canhão" />
@@ -21,5 +35,9 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <div>
+        <router-outlet></router-outlet>    
     </div>
 </div>

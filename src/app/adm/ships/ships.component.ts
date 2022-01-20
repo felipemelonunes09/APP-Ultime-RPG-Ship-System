@@ -7,7 +7,8 @@ import { ShipService } from './ships.service';
   styleUrls: ['./ships.component.css']
 })
 export class ShipsComponent implements OnInit {
-  ships: any = [];
+  public ships: any = [];
+
   constructor(private shipService: ShipService) { }
 
   ngOnInit(): void {

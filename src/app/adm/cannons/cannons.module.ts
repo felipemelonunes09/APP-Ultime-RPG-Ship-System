@@ -2,17 +2,24 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CannonsComponent } from './cannons.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { EmptyListBlankslateComponent } from 'src/app/static/empty-list-blankslate/empty-list-blankslate.component';
 import { EmptyListBlankslateModule } from 'src/app/static/empty-list-blankslate/empty-list-blankslate.module';
-
-
+import { ListCannonsComponent } from './list-cannons/list-cannons.component';
+import { FormCannonsComponent } from './form-cannons/form-cannons.component';
+import { AppFieldControlMsgModule } from 'src/app/static/app-field-control-msg/app-field-control-msg.module';
+import { CannonsRoutingModule } from './cannons.rounting.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    CannonsComponent
+    CannonsComponent,
+    ListCannonsComponent,
+    FormCannonsComponent
   ],
   imports: [
+    AppFieldControlMsgModule,
     EmptyListBlankslateModule,
+    CannonsRoutingModule,
+    ReactiveFormsModule,
     CommonModule,
     BrowserModule
   ]
