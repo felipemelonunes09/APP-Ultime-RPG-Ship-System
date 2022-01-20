@@ -39,7 +39,6 @@ export class FormPartsComponent implements OnInit {
         return true
       }
     }
-
     return false
   }
 
