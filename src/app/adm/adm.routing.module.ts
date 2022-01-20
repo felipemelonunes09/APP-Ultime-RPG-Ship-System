@@ -2,9 +2,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdmComponent } from './adm.component';
 import { CannonsComponent } from './cannons/cannons.component';
-import { FormPartsComponent } from './parts/form-parts/form-parts.component';
+import { CreatePartsComponent } from './parts/create-parts/create-parts.component';
 import { ListPartsComponent } from './parts/list-parts/list-parts.component';
 import { PartsComponent } from './parts/parts.component';
+import { UpdatePartsComponent } from './parts/update-parts/update-parts.component';
 import { ShipsComponent } from './ships/ships.component';
 import { FormShipsComponent } from './ships/form-ships/form-ships.component';
 import { ListShipsComponent } from './ships/list-ships/list-ships.component';
@@ -19,7 +20,8 @@ const routes: Routes = [
           { path: 'parts', component: PartsComponent, 
             children: [
               { path: 'list', component: ListPartsComponent }, 
-              { path: 'create', component: FormPartsComponent }
+              { path: 'create', component: CreatePartsComponent },
+              { path: 'update', component: UpdatePartsComponent }
             ]
           },
           { path: 'cannons', component: CannonsComponent,
