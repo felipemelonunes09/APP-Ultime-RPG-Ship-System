@@ -8,6 +8,7 @@ import { FormCannonsComponent } from './form-cannons/form-cannons.component';
 import { AppFieldControlMsgModule } from 'src/app/static/app-field-control-msg/app-field-control-msg.module';
 import { CannonsRoutingModule } from './cannons.rounting.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormCannonsModule } from './form-cannons/form-cannons.module';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppFieldControlMsgModule,
     EmptyListBlankslateModule,
     CannonsRoutingModule,
+    FormCannonsModule,
     ReactiveFormsModule,
     CommonModule,
     BrowserModule
