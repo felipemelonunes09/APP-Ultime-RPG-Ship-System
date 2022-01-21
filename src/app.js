@@ -3,7 +3,11 @@ const cannonRouter = require('./cannon/cannon.route');
 const bodyParser = require('body-parser');
 const shipPartsRouter = require('./ship-parts/ship-parts.route');
 const shipRouter = require('./ship/ship.route');
+const cors = require('cors')
+
 const app = express();
+app.use(cors())
+
 
 // Config 
     app.use( bodyParser.urlencoded({ extended: true }) )
