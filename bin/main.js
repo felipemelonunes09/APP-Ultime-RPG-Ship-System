@@ -1,7 +1,7 @@
 'use strict'
 
-const app = require('../src/app');
 const mongoose = require('mongoose');
+const app = require('../src/app');
 
 require('dotenv').config({ path: '../.env' });
 
