@@ -12,6 +12,7 @@ const DB_PORT =         process.env.DB_PORT || 27017;
 
 const DATABASE_URL =    `mongodb://localhost:${DB_PORT}/${DB_NAME}`;
 
+
 app.listen(PORT, async () => {
 
     await mongoose.connect(DATABASE_URL).catch((e) => { console.log(e) })
