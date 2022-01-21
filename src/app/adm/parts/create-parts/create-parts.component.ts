@@ -12,17 +12,27 @@ export class CreatePartsComponent implements OnInit {
 
   constructor(private partsService: PartsService) { }
 
+  public loading = false
+
   ngOnInit(): void {
     
   }
 
   create(values: any) : any {
-    console.log(values)
+
+    this.loading = true
     this.partsService.create( JSON.parse(values) ).subscribe(
-      res => { console.log('Responsa feito'); console.log(res) },
+      res => { console.log(res) },
       err => { 
-        Swal.fire('Alo servidor ? tá ai mano ?', 'Ala mano o servidor me deixou no vácuo aqui :(', 'question')
-       }
+        this.loading = false
+        Swal.fire({
+          title: 'Alo servidor ? cade você ?',
+          html: 'Desculpa mas infelizmente o servidor me deixou no vácuo, verifique o seu meio de comunicação com a internet',
+          icon: 'question',
+          timer: 3*1000,
+          background: '#0d1117'
+        })
+      }
     )
   }
 

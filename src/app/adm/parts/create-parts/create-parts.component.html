@@ -1,7 +1,10 @@
 <div class="container-lg clearfix mt-5 ml-5 mr-5">
     <div class="Subhead">
         <div class="Subhead-heading" style="color: #58a6ff;">
-            <i class="far fa-edit"></i> Criando a parte
+            <i [hidden]="loading" class="far fa-edit"></i> 
+            <i [hidden]="!loading" class="fas fa-sync anim-rotate"></i>
+            Criando a parte            
+
         </div>
     </div>
 </div>
