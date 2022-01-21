@@ -1,0 +1,72 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="container-lg clearfix m-5">
+        <div class="Subhead">
+            <div class="Subhead-heading" style="color: #58a6ff;">
+                <i class="far fa-edit"></i> Criando a canhão
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-5 mr-lg-2 col-sm-12 float-left mb-3">
+                <div class="form-group" [ngClass]="getCss('nome')">
+                    <div class="form-group-header">
+                        <label for="name"> <i class="fas fa-signature"></i> Nome </label>
+                    </div>
+                    <input class="form-control input-lg input-block mt-2 ml-2 input-contrast" formControlName="name" type="text" placeholder="Digite o nome do canhão">
+                    <app-app-field-control-msg
+                        error="{{ getValidAndTouched('nome') }}"
+                        touched="{{ form.get('nome')?.touched }}"
+                        successText="Nome válido"
+                        errorText="Nome inválido">
+                    </app-app-field-control-msg>
+                </div>
+            </div>
+            <div class="col-lg-3 mr-lg-2 col-sm-12 float-left">
+                <div class="form-group" [ngClass]="getCss('damage')">
+                    <div  class="form-group-header">
+                        <label for="health"> <i class="fas fa-fire"></i> Dano </label>
+                    </div>
+                    <input class="form-control input-lg input-block mt-2 ml-2 input-contrast" formControlName="damage" type="number" placeholder="Digite o dano do canhão">
+                    <app-app-field-control-msg
+                        error="{{ getValidAndTouched('damage') }}"
+                        touched="{{ form.get('damage')?.touched }}"
+                        successText="Dano válido"
+                        errorText="Digite um número">
+                    </app-app-field-control-msg>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-12 float-left">
+                <div class="form-group" [ngClass]="getCss('range')">
+                    <div  class="form-group-header">
+                        <label for="health"> <i class="fas fa-crosshairs"></i> Alcance </label>
+                    </div>
+                    <input class="form-control input-lg input-block mt-2 ml-2 input-contrast" formControlName="range" type="number" placeholder="Digite o alcance do canhão">
+                    <app-app-field-control-msg
+                        error="{{ getValidAndTouched('range') }}"
+                        touched="{{ form.get('range')?.touched }}"
+                        successText="Alcance válido"
+                        errorText="Digite um número">
+                    </app-app-field-control-msg>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 float-left p-2 mb-2">
+                <label for="description"> <i class="fas fa-align-right"></i> Description </label>
+                <textarea class="form-control input-block mt-2 input-contrast" formControlName="description" placeholder="Digite a descrição do componente que deseja criar"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 float-left p-2 mb-3">
+                <label for="ranking"> <i class="fas fa-trophy"></i> Ranking </label>
+                <select class="input-block mt-2 form-select input-contrast" formControlName="ranking">
+                    <option *ngFor="let rank of getRank()"> {{ rank }} </option>
+                </select>
+            </div>
+        </div>
+        <div class="row"> 
+            <div class="mb-2 float-right">
+                <button class="btn btn-primary" type="submit"> Criar </button>
+            </div>
+        </div>
+    </div>
+</form>
