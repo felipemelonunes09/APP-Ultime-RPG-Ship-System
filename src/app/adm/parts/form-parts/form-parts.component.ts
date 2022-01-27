@@ -34,7 +34,7 @@ export class FormPartsComponent implements OnInit {
   }
 
   public onSubmit() {
-    if (this.form.valid) {
+    if ( true /*this.form.valid*/) {
       this.submitted.emit(JSON.stringify(this.form.value))
       this.form.reset()
     } 

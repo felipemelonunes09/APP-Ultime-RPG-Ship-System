@@ -4,9 +4,9 @@
             <div class="col-lg-6 col-sm-12 float-left mb-3">
                 <div class="form-group" [ngClass]="getCss('name')">
                     <div class="form-group-header">
-                        <label for="name"> <i class="fas fa-signature"></i> Nome </label>
+                        <label for="name"> <i class="fas fa-signature"></i> Name </label>
                     </div>
-                    <input class="form-control input-lg input-block mt-2 input-contrast" formControlName="name" type="text" placeholder="Digite o nome da parte do navio">
+                    <input class="form-control input-lg input-block mt-2 input-contrast" formControlName="name" type="text" placeholder="Type the name of the ship part">
                     <app-app-field-control-msg
                         error="{{ getValidAndTouched('name') }}"
                         touched="{{ form.get('name')?.touched }}"
@@ -18,9 +18,9 @@
             <div class="col-lg-6 col-sm-12 float-left">
                 <div class="form-group" [ngClass]="getCss('health')">
                     <div  class="form-group-header">
-                        <label for="health"> <i class="far fa-heart"></i> Vida </label>
+                        <label for="health"> <i class="far fa-heart"></i> Health </label>
                     </div>
-                    <input class="form-control input-lg input-block mt-2 input-contrast" formControlName="health" type="number" placeholder="Digite a vida da parte">
+                    <input class="form-control input-lg input-block mt-2 input-contrast" formControlName="health" type="number" placeholder="Type the health of the ship part">
                     <app-app-field-control-msg
                         error="{{ getValidAndTouched('health') }}"
                         touched="{{ form.get('health')?.touched }}"
@@ -33,7 +33,7 @@
         <div class="row">
             <div class="col-12 float-left mb-4">
                 <label for="description"> <i class="fas fa-align-right"></i> Description </label>
-                <textarea class="form-control input-block mt-2 input-contrast" formControlName="description" placeholder="Digite a descrição do componente que deseja criar"></textarea>
+                <textarea class="form-control input-block mt-2 input-contrast" formControlName="description" placeholder="Type the part description"></textarea>
             </div>
         </div>
         <div class="row">
