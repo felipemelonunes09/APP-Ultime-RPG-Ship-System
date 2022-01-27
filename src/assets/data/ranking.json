@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "symbol": "SS",
+        "value": 7
+    },
+    {
+        "id": 2,
+        "symbol": "S",
+        "value": 6
+    },
+    {
+        "id": 3,
+        "symbol": "A",
+        "value": 5
+    },
+    {
+        "id": 4,
+        "symbol": "B",
+        "value": 4
+    },
+    {
+        "id": 5,
+        "symbol": "C",
+        "value": 3
+    },
+    {
+        "id": 6,
+        "symbol": "D",
+        "value": 2
+    },
+    {
+        "id": 7,
+        "symbol": "E",
+        "value": 1
+    }
+]

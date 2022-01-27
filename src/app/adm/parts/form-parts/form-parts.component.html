@@ -40,7 +40,8 @@
             <div class="col-12 float-left mb-3">
                 <label for="ranking"> <i class="fas fa-trophy"></i> Ranking </label>
                 <select class="input-block mt-2 form-select input-contrast" formControlName="ranking">
-                    <option *ngFor="let rank of getRank()"> {{ rank }} </option>
+                    <option selected> Escolha um rank </option>
+                    <option *ngFor="let rank of ranking" value="{{ rank.value }}"> {{ rank.symbol }} </option>
                 </select>
             </div>
         </div>

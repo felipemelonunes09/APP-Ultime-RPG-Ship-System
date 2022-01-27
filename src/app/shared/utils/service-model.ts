@@ -6,8 +6,8 @@ export class ServiceModel {
     public routeName: string = "";
     constructor(private http: HttpClient) { }
 
-      getAll() {
-        return this.http.get(`${environment.url}/${this.routeName}`);
+    getAll() {
+      return this.http.get(`${environment.url}/${this.routeName}`);
     }
     
     getById(id: number) {
