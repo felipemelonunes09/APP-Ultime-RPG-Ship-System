@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 import { CannonService } from '../cannons.service';
 
 @Component({
@@ -37,9 +38,13 @@ export class ListCannonsComponent implements OnInit {
      });
   }
 
-  delete(id: number) {
+  delete(id: string) {
     this.cannonService.delete(id).subscribe((cannons: any) => {
-      console.log(cannons);
+      Swal.fire(
+        'Deleted!',
+        'Your file has been deleted.',
+        'success'
+      )
      });
   }
 }

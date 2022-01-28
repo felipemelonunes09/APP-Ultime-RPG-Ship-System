@@ -45,7 +45,7 @@ export class ShipsComponent implements OnInit {
      });
   }
 
-  delete(id: number) {
+  delete(id: string) {
     this.shipService.delete(id).subscribe((ships: any) => {
       console.log(ships);
      });

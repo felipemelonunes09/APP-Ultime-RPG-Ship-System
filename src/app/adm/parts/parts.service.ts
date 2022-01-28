@@ -19,4 +19,8 @@ export class PartsService extends ServiceModel {
     getAll(): Observable<Part[]> {
         return this.partHttp.get<Part[]>(`${environment.url}/${this.routeName}`)
     }
+
+    delete(id: string): Observable<any> {
+        return this.partHttp.delete<any>(`${environment.url}/${this.routeName}/${id}`)
+    }
 }

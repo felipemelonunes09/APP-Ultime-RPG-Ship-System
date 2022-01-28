@@ -22,7 +22,7 @@ export class ServiceModel {
       return this.http.patch(`${environment.url}/${this.routeName}/${data.id}`, data);
     }
     
-    delete(id: number) {
+    delete(id: string) {
       return this.http.delete(`${environment.url}/${this.routeName}/${id}`);
     }
 }

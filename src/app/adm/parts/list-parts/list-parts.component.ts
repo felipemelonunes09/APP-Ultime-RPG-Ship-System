@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { Part } from 'src/app/shared/models/parts.model';
+import Swal from 'sweetalert2';
 import { PartsService } from '../parts.service';
 
 @Component({
@@ -27,5 +29,34 @@ export class ListPartsComponent implements OnInit {
 
   create(value: any): void {
       this.router.navigate(['/adm', 'parts', 'create'])
+  }
+
+  delete(data: any) {
+    
+    const id = data._id
+    this.partsService.delete(id).subscribe(res => { 
+      Swal.fire(
+          'Deleted!',
+          'Your file has been deleted.',
+          'success'
+        )
+     })
+  }
+
+  confirm(data: any) { 
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this! ID: " + data._id,
+      icon: 'warning',
+      background: '#0d1117',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.delete(data)
+      }
+    })
   }
 }
