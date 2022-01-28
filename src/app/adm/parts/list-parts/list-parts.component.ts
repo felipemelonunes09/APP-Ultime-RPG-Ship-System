@@ -24,6 +24,4 @@ export class ListPartsComponent implements OnInit {
       console.log('testing')
       this.router.navigate(['/adm', 'parts', 'create'])
   }
-
-
 }

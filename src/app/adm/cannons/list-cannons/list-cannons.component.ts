@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CannonService } from '../cannons.service';
 
 @Component({
@@ -9,14 +10,19 @@ import { CannonService } from '../cannons.service';
 export class ListCannonsComponent implements OnInit {
 
   cannons: any = [];
-  constructor(private cannonService: CannonService) { }
+  constructor(private router: Router, private cannonService: CannonService) { }
 
   ngOnInit(): void {
     this.getAll();
   }
 
+  create(value: any): void {
+    console.log('testing')
+    this.router.navigate(['/adm', 'parts', 'create'])
+  }
+
   isPartsEmpty() : Boolean {
-    return this.cannons.length == 0
+    return this.cannons.length == 0;
   }
 
   getAll() {

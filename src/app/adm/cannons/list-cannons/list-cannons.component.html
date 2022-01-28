@@ -1,5 +1,17 @@
+<div>
+    <div *ngIf="isPartsEmpty()">
 
-    <div *ngIf="!isPartsEmpty()" >
+        <app-empty-list-blankslate 
+            title="Sem partes de navios criadas" 
+            description="Crie partes de navios como mastro, casco, convés e velas para reutilizar na criações individuais de cada navio." 
+            button="Criar nova parte" 
+            link="Voltar"
+            (buttonClicked)="create($event)">
+        </app-empty-list-blankslate>
+    
+    </div>
+
+    <div *ngIf="!isPartsEmpty()">
         <div class="m-5">
             <div class="Subhead">
                 <div class="Subhead-heading" style="color: #58a6ff;"><i class="fas fa-meteor mr-2"></i> Canhões </div>
@@ -22,3 +34,4 @@
             </div>
         </div>
     </div>
+</div>
