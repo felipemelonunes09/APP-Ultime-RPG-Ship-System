@@ -11,6 +11,8 @@ import { FormShipsComponent } from './ships/form-ships/form-ships.component';
 import { ListShipsComponent } from './ships/list-ships/list-ships.component';
 import { ListCannonsComponent } from './cannons/list-cannons/list-cannons.component';
 import { FormCannonsComponent } from './cannons/form-cannons/form-cannons.component';
+import { UpdateCannonsComponent } from './cannons/update-cannons/update-cannons.component';
+import { CreateCannonsComponent } from './cannons/create-cannons/create-cannons.component';
 
 const routes: Routes = [
     {
@@ -27,7 +29,8 @@ const routes: Routes = [
           { path: 'cannons', component: CannonsComponent,
             children: [
               { path: 'list', component: ListCannonsComponent },
-              { path: 'create', component: FormCannonsComponent }
+              { path: 'create', component: CreateCannonsComponent },
+              { path: 'update', component: UpdateCannonsComponent }
             ]
           },
           { path: 'ships', component: ShipsComponent,
