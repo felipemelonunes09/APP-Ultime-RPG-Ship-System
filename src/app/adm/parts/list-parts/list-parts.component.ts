@@ -28,6 +28,4 @@ export class ListPartsComponent implements OnInit {
   create(value: any): void {
       this.router.navigate(['/adm', 'parts', 'create'])
   }
-
-
 }

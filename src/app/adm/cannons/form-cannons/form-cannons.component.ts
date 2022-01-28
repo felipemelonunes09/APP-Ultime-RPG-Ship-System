@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DataService } from 'src/app/shared/utils/data.service';
 
@@ -9,7 +9,9 @@ import { DataService } from 'src/app/shared/utils/data.service';
 })
 export class FormCannonsComponent implements OnInit {
 
-  form!: FormGroup; 
+  form!: FormGroup;
+
+  @Output() submitted = new EventEmitter()
 
   constructor(
     private formBuilder: FormBuilder,
@@ -27,6 +29,7 @@ export class FormCannonsComponent implements OnInit {
   }
 
   public onSubmit() {
+    this.submitted.emit(JSON.stringify(this.form.value))
     this.form.reset()
   }
 

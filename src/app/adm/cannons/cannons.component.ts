@@ -24,12 +24,6 @@ export class CannonsComponent implements OnInit {
      });
   }
 
-  getById(id: number) {
-    this.cannonService.getById(id).subscribe((cannons: any) => {
-      console.log(cannons);
-     });
-  }
-
   create(data: any) {
     this.cannonService.create(data).subscribe((cannons: any) => {
       console.log(cannons);
@@ -42,9 +36,4 @@ export class CannonsComponent implements OnInit {
      });
   }
 
-  delete(id: number) {
-    this.cannonService.delete(id).subscribe((cannons: any) => {
-      console.log(cannons);
-     });
-  }
 }

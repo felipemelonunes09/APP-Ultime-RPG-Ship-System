@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { CannonService } from '../cannons.service';
 
 @Component({
   selector: 'app-list-cannons',
@@ -7,9 +9,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListCannonsComponent implements OnInit {
 
-  constructor() { }
+  cannons: any = [];
+  constructor(private router: Router, private cannonService: CannonService) { }
 
   ngOnInit(): void {
+    this.getAll();
   }
 
+  create(value: any): void {
+    console.log('testing')
+    this.router.navigate(['/adm', 'parts', 'create'])
+  }
+
+  isPartsEmpty() : Boolean {
+    return this.cannons.length == 0;
+  }
+
+  getAll() {
+    this.cannonService.getAll().subscribe((cannons: any) => {
+      this.cannons = cannons.objects;
+     });
+  }
+
+  getById(id: number) {
+    this.cannonService.getById(id).subscribe((cannons: any) => {
+      console.log(cannons);
+     });
+  }
+
+  delete(id: number) {
+    this.cannonService.delete(id).subscribe((cannons: any) => {
+      console.log(cannons);
+     });
+  }
 }
