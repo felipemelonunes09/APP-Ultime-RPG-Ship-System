@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PartsService } from '../parts.service';
 import Swal from 'sweetalert2'
+import { MyAlert } from 'src/app/shared/utils/warning';
 
 
 @Component({
@@ -12,17 +13,25 @@ export class CreatePartsComponent implements OnInit {
 
   constructor(private partsService: PartsService) { }
 
+  public loading = false
+
   ngOnInit(): void {
     
   }
 
   create(values: any) : any {
+
+    this.loading = true
     console.log(values)
     this.partsService.create( JSON.parse(values) ).subscribe(
-      res => { console.log('Responsa feito'); console.log(res) },
+      res => { 
+        MyAlert.createdToast('Part created, good job')
+        this.loading = false
+      },
       err => { 
-        Swal.fire('Alo servidor ? tá ai mano ?', 'Ala mano o servidor me deixou no vácuo aqui :(', 'question')
-       }
+        this.loading = false
+        MyAlert.show(err.status, err?.error?.message)
+      }
     )
   }
 

@@ -1,5 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Rank } from 'src/app/shared/models/rank.model';
+import { DataService } from 'src/app/shared/utils/data.service'
 import { PartsService } from '../parts.service';
 
 @Component({
@@ -9,13 +11,15 @@ import { PartsService } from '../parts.service';
 })
 export class FormPartsComponent implements OnInit {
 
-  form!: FormGroup; 
+  public form!: FormGroup; 
+  public ranking!: Rank[]
 
   @Output() submitted = new EventEmitter()
 
   constructor(
     private formBuilder: FormBuilder,
-    private partsServive: PartsService
+    private partsServive: PartsService,
+    private dataService: DataService
   ) { }
 
   ngOnInit(): void {
@@ -25,15 +29,18 @@ export class FormPartsComponent implements OnInit {
       ranking: [null,  Validators.required],
       description: [null, Validators.required]
     })
+
+    this.dataService.getRanking().subscribe((data) => { this.ranking = data })
   }
 
   public onSubmit() {
-    this.submitted.emit(JSON.stringify(this.form.value))
-    this.form.reset()
-  }
-
-  public getRank() {
-    return this.partsServive.ranking
+    if ( true /*this.form.valid*/) {
+      this.submitted.emit(JSON.stringify(this.form.value))
+      this.form.reset()
+    } 
+    else {
+      this.form.markAllAsTouched()
+    }
   }
 
   public getValidAndTouched(field: string) : any {

@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { DataModelService } from 'src/utils/datamodel.service';
+import { DataService } from 'src/app/shared/utils/data.service';
 
 @Component({
   selector: 'app-form-cannons',
@@ -15,7 +15,7 @@ export class FormCannonsComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private readonly dataModelService: DataModelService
+    private readonly dataService: DataService
   ) { }
 
   ngOnInit(): void {
@@ -34,7 +34,6 @@ export class FormCannonsComponent implements OnInit {
   }
 
   public getRank() {
-    return this.dataModelService.ranking
   }
 
   public getValidAndTouched(field: string) : any {
