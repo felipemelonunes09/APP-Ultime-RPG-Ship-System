@@ -18,14 +18,19 @@
             <div class="mt-5 mb-2">
                 <input class="form-control input-block" type="text" placeholder="Full-width input" aria-label="Full-width input" />
             </div>
-            <div class="Box">
-                <div class="Box-row d-flex flex-items-center">
+            <div class="Box mb-1 color-shadow-medium grow">
+                <div class="Box-row d-flex flex-items-center" *ngFor="let part of parts.objects">
                     <div class="flex-auto">
-                        <strong> Row title </strong>
+                        <strong> {{ part.name }} - Rank: {{ part.ranking }} </strong>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
                         <div class="text-small color-fg-subtle">
-                            Description
+                            {{ part.description }}
                         </div>
                     </div>
+
+                    <h3 style="color: #bd1c19;"> <i class="fas fa-trash m-1"></i> </h3>
+                    <h3 style="color: #4274fc;"> <i class="far fa-edit m-1"></i> </h3>
+
+
                 </div>
             </div>
         </div>

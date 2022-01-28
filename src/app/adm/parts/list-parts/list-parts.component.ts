@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Part } from 'src/app/shared/models/parts.model';
+import { PartsService } from '../parts.service';
 
 @Component({
   selector: 'app-list-parts',
@@ -8,20 +10,22 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ListPartsComponent implements OnInit {
   
-  parts: any = [];
+  public parts: any = [];
 
-  constructor(private router: Router, private route: ActivatedRoute) { }
+  constructor( 
+    private router: Router, 
+    private partsService: PartsService
+    ) { }
 
   ngOnInit(): void {
+    this.partsService.getAll().subscribe(data => { this.parts = data; })
   }
 
-  
   isPartsEmpty() : Boolean {
-    return this.parts.length == 0
+    return this.parts.objects.length == 0 
   }
 
   create(value: any): void {
-      console.log('testing')
       this.router.navigate(['/adm', 'parts', 'create'])
   }
 
